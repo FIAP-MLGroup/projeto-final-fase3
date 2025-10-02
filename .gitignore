@@ -1,3 +1,4 @@
 api/.venv/
 model/.venv/
 carga-banco/.venv/
+api/__pycache__/
