@@ -16,7 +16,17 @@ Os radares espalhados pelo estado do Rio de Janeiro enviam dados para a API, que
 
 ---
 
-## 1. API de Medições de Radar
+## 1. Banco de dados
+
+Para levantar o banco de dados execute:
+
+```
+podman run -e POSTGRES_PASSWORD=admin -e POSTGRES_USER=admin -e POSTGRES_DB=default_db -p 5432:5432 postgres
+```
+
+---
+
+## 2. API de Medições de Radar
 
 API desenvolvida em FastAPI para registro e consulta de medições de velocidade de veículos. Permite integração com banco de dados relacional e oferece endpoints para inserção e consulta dos dados.
 
@@ -30,7 +40,7 @@ Principais tópicos:
 
 ---
 
-## 2. Programa de Carga de Dados
+## 3. Programa de Carga de Dados
 
 Script Python que lê um arquivo CSV com medições e envia os dados para a API via requisições HTTP POST. Automatiza o processo de alimentação do banco de dados da API. Simula o processo de envio de dados por múltiplos radares.
 
@@ -43,7 +53,7 @@ Principais tópicos:
 
 ---
 
-## 3. Modelo de Análise Preditiva e Interface Gráfica
+## 4. Modelo de Análise Preditiva e Interface Gráfica
 
 Aplicação Streamlit que realiza análise preditiva para detecção de possíveis clonagens de placas de veículos, utilizando técnicas de machine learning (Isolation Forest). Os resultados são apresentados em mapas e tabelas interativas.
 
@@ -59,6 +69,7 @@ Principais tópicos:
 ## Requisitos Gerais
 - Python 3.11
 - Banco de dados PostgreSQL (para API e modelo)
+- Podman
 
 Consulte os READMEs de cada componente para detalhes de instalação, configuração e uso.
 
